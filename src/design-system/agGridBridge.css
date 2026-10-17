@@ -1,0 +1,35 @@
+/**
+ * AG Grid Token Bridge
+ * Maps BlackArrow semantic design tokens to AG Grid theme CSS variables
+ * without altering AG Grid runtime behavior or dataset bindings.
+ */
+
+.ag-theme-alpine,
+.ag-theme-alpine-dark,
+.ag-theme-quartz,
+.ag-theme-quartz-dark {
+  --ag-background-color: var(--ca-surface-1);
+  --ag-header-background-color: var(--ca-surface-2);
+  --ag-header-foreground-color: var(--ca-text-muted);
+  --ag-foreground-color: var(--ca-text-primary);
+  --ag-secondary-foreground-color: var(--ca-text-secondary);
+  --ag-disabled-foreground-color: var(--ca-disabled-fg);
+  --ag-border-color: var(--ca-border-default);
+  --ag-row-border-color: var(--ca-border-subtle);
+  --ag-row-hover-color: var(--ca-surface-3);
+  --ca-ag-selected-row-bg: var(--ca-selection-bg);
+  --ag-selected-row-background-color: var(--ca-ag-selected-row-bg);
+  --ag-focus-shadow: 0 0 0 2px var(--ca-focus-ring);
+  --ag-input-focus-box-shadow: 0 0 0 2px var(--ca-focus-ring);
+  --ag-row-height: var(--ca-layout-table-row-height);
+  --ag-header-height: 2.75rem;
+  --ag-font-family: var(--ca-font-sans);
+  --ag-font-size: var(--ca-font-size-body);
+}
+
+/* Accessible focus styling for AG Grid cells */
+.ag-cell-focus,
+.ag-header-cell-focus {
+  outline: 2px solid var(--ca-focus-ring) !important;
+  outline-offset: -2px !important;
+}

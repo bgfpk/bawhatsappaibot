@@ -1,0 +1,10 @@
+import fs from 'node:fs';
+import crypto from 'node:crypto';
+import { StageDocumentStore } from '../staging/document-store';
+import { hashPassword } from '../services/password-security';
+if(process.env.BLACKARROW_DISPOSABLE_TEST!=='1')throw Error('Disposable test storage required');
+if(fs.existsSync('/state/custody.json'))throw Error('Refusing to overwrite existing custody');
+fs.writeFileSync('/state/custody.json',JSON.stringify({email:'alpha@blackarrow.test',sessionSecret:crypto.randomBytes(48).toString('hex'),encryptionSecret:crypto.randomBytes(48).toString('hex')}),{mode:0o600});
+const store=new StageDocumentStore('/state/blackarrow.sqlite');
+for(const name of ['alpha','beta'])await store.createDocument('blackarrow_stage','users','disposable-'+name,{email:name+'@blackarrow.test',name:'Disposable '+name,password_hash:hashPassword('DisposableTestOnly#2026'),role:'user',created_at:Math.floor(Date.now()/1000)});
+store.close();console.log('Disposable identities created outside owner staging storage.');

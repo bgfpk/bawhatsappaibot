@@ -1,0 +1,26 @@
+{
+  "extends": "./tsconfig.json",
+  "include": [
+    "next-env.d.ts",
+    "app/**/*.ts",
+    "app/**/*.tsx",
+    "components/**/*.ts",
+    "components/**/*.tsx",
+    "lib/**/*.ts",
+    "lib/**/*.tsx",
+    "../../src/shared/public-content/**/*.ts",
+    "../../src/content/**/*.ts",
+    "../../src/config/pricing.ts",
+    "../../src/config/public-seo.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    ".next",
+    ".next-web",
+    "../../src/services",
+    "../../src/components",
+    "../../src/hooks",
+    "../../src/api",
+    "../../src/utils"
+  ]
+}

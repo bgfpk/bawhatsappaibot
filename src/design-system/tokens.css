@@ -1,0 +1,232 @@
+/**
+ * BlackArrow Dashboard Semantic Design Tokens
+ * Authoritative CSS variables for light and dark themes.
+ */
+
+:root {
+  /* Theme Policy & Indicator */
+  color-scheme: dark;
+
+  /* Typography */
+  --ca-font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --ca-font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  
+  --ca-font-size-caption: 0.75rem;    /* 12px */
+  --ca-font-size-sm: 0.8125rem;       /* 13px */
+  --ca-font-size-body: 0.875rem;      /* 14px */
+  --ca-font-size-strong: 0.9375rem;   /* 15px */
+  --ca-font-size-section: 1.125rem;   /* 18px */
+  --ca-font-size-heading: 1.5rem;     /* 24px */
+  --ca-font-size-metric: 2rem;        /* 32px */
+
+  --ca-line-height-tight: 1.25;
+  --ca-line-height-normal: 1.5;
+  --ca-line-height-relaxed: 1.625;
+
+  --ca-font-weight-regular: 400;
+  --ca-font-weight-medium: 500;
+  --ca-font-weight-semibold: 600;
+  --ca-font-weight-bold: 700;
+
+  --ca-letter-spacing-tight: -0.015em;
+  --ca-letter-spacing-normal: 0em;
+  --ca-letter-spacing-wide: 0.05em;
+
+  /* Spacing Scale */
+  --ca-space-0: 0px;
+  --ca-space-1: 0.125rem; /* 2px */
+  --ca-space-2: 0.25rem;  /* 4px */
+  --ca-space-3: 0.375rem; /* 6px */
+  --ca-space-4: 0.5rem;   /* 8px */
+  --ca-space-5: 0.75rem;  /* 12px */
+  --ca-space-6: 1rem;     /* 16px */
+  --ca-space-7: 1.25rem;  /* 20px */
+  --ca-space-8: 1.5rem;   /* 24px */
+  --ca-space-9: 2rem;     /* 32px */
+  --ca-space-10: 2.5rem;  /* 40px */
+  --ca-space-11: 3rem;    /* 48px */
+
+  /* Radius Scale */
+  --ca-radius-none: 0px;
+  --ca-radius-sm: 0.375rem;   /* 6px */
+  --ca-radius-md: 0.5rem;     /* 8px */
+  --ca-radius-lg: 0.75rem;    /* 12px */
+  --ca-radius-xl: 1rem;       /* 16px */
+  --ca-radius-pill: 9999px;
+
+  /* Border Tokens */
+  --ca-border-width: 1px;
+  --ca-border-style: solid;
+
+  /* Elevation (Shadows) */
+  --ca-shadow-flat: none;
+  --ca-shadow-raised: 0 2px 8px rgba(0, 0, 0, 0.24);
+  --ca-shadow-floating: 0 8px 24px rgba(0, 0, 0, 0.32);
+  --ca-shadow-modal: 0 16px 48px rgba(0, 0, 0, 0.48);
+
+  /* Motion Tokens */
+  --ca-motion-fast: 140ms;
+  --ca-motion-standard: 180ms;
+  --ca-motion-slow: 240ms;
+  --ca-motion-easing: cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Layout Scale */
+  --ca-layout-sidebar-collapsed: 4.5rem; /* 72px */
+  --ca-layout-sidebar-expanded: 16rem;   /* 256px */
+  --ca-layout-header-height: 4rem;      /* 64px */
+  --ca-layout-page-gutter: 1.5rem;      /* 24px */
+  --ca-layout-content-max-width: 80rem; /* 1280px */
+  --ca-layout-form-max-width: 36rem;    /* 576px */
+  --ca-layout-dialog-sm: 28rem;         /* 448px */
+  --ca-layout-dialog-md: 36rem;         /* 576px */
+  --ca-layout-dialog-lg: 48rem;         /* 768px */
+  --ca-layout-drawer-width: 24rem;      /* 384px */
+  --ca-layout-table-row-height: 3rem;   /* 48px */
+  --ca-layout-touch-target-min: 44px;
+
+  /* Z-Index Layers */
+  --ca-z-base: 0;
+  --ca-z-sticky: 10;
+  --ca-z-header: 20;
+  --ca-z-dropdown: 30;
+  --ca-z-popover: 40;
+  --ca-z-drawer: 50;
+  --ca-z-modal: 60;
+  --ca-z-toast: 70;
+  --ca-z-alert: 80;
+
+  /* Default Theme Tokens (Dark First) */
+  --ca-canvas-0: #0a0c0d;
+  --ca-canvas-1: #101315;
+  --ca-canvas-2: #15191b;
+  
+  --ca-surface-0: #121518;
+  --ca-surface-1: #171b1e;
+  --ca-surface-2: #1d2226;
+  --ca-surface-3: #242a2f;
+  --ca-surface-4: #2c3338;
+  --ca-surface-elevated: #22272c;
+  --ca-overlay: rgba(4, 5, 6, 0.76);
+
+  --ca-border-subtle: rgba(255, 255, 255, 0.08);
+  --ca-border-default: rgba(255, 255, 255, 0.14);
+  --ca-border-strong: rgba(255, 255, 255, 0.22);
+
+  --ca-text-primary: #f2f4f3;
+  --ca-text-secondary: #c4cac7;
+  --ca-text-muted: #9fa8a4;
+  --ca-text-faint: #7d8681;
+  --ca-text-inverse: #08100c;
+
+  --ca-brand: #32cf91;
+  --ca-brand-hover: #2bbd83;
+  --ca-brand-active: #24ad78;
+  --ca-brand-soft: rgba(50, 207, 145, 0.12);
+  --ca-brand-fg: #061f14;
+
+  --ca-focus-ring: #32cf91;
+  --ca-focus-ring-outline: rgba(50, 207, 145, 0.4);
+
+  --ca-success: #32cf91;
+  --ca-success-soft: rgba(50, 207, 145, 0.14);
+  --ca-success-fg: #f2f4f3;
+
+  --ca-warning: #e5aa48;
+  --ca-warning-soft: rgba(229, 170, 72, 0.14);
+  --ca-warning-fg: #f2f4f3;
+
+  --ca-danger: #d92d20;
+  --ca-danger-hover: #b91c1c;
+  --ca-danger-active: #991b1b;
+  --ca-danger-soft: rgba(217, 45, 32, 0.16);
+  --ca-danger-fg: #ffffff;
+  --ca-danger-text: #f87171;
+
+  --ca-info: #5bb9e8;
+  --ca-info-soft: rgba(91, 185, 232, 0.14);
+  --ca-info-fg: #f2f4f3;
+
+  --ca-disabled-bg: rgba(255, 255, 255, 0.05);
+  --ca-disabled-fg: rgba(255, 255, 255, 0.38);
+  --ca-disabled-border: rgba(255, 255, 255, 0.08);
+
+  --ca-selection-bg: rgba(50, 207, 145, 0.22);
+  --ca-selection-fg: #ffffff;
+
+  --ca-skeleton-bg: #1c2125;
+  --ca-skeleton-shimmer: #282e34;
+}
+
+/* Light Theme Tokens */
+html.light,
+[data-theme="light"] {
+  color-scheme: light;
+
+  --ca-canvas-0: #f0f2f1;
+  --ca-canvas-1: #f7f8f7;
+  --ca-canvas-2: #e8ebe9;
+
+  --ca-surface-0: #f9faf9;
+  --ca-surface-1: #ffffff;
+  --ca-surface-2: #f4f6f5;
+  --ca-surface-3: #eaeaea;
+  --ca-surface-4: #e0e2e1;
+  --ca-surface-elevated: #ffffff;
+  --ca-overlay: rgba(15, 20, 18, 0.52);
+
+  --ca-border-subtle: rgba(18, 22, 20, 0.08);
+  --ca-border-default: rgba(18, 22, 20, 0.15);
+  --ca-border-strong: rgba(18, 22, 20, 0.28);
+
+  --ca-text-primary: #121614;
+  --ca-text-secondary: #3d4440;
+  --ca-text-muted: #58605b;
+  --ca-text-faint: #757f79;
+  --ca-text-inverse: #ffffff;
+
+  --ca-brand: #12714e;
+  --ca-brand-hover: #0e5b3e;
+  --ca-brand-active: #0a4831;
+  --ca-brand-soft: rgba(18, 113, 78, 0.1);
+  --ca-brand-fg: #ffffff;
+
+  --ca-focus-ring: #12714e;
+  --ca-focus-ring-outline: rgba(18, 113, 78, 0.4);
+
+  --ca-success: #12714e;
+  --ca-success-soft: rgba(18, 113, 78, 0.12);
+  --ca-success-fg: #121614;
+
+  --ca-warning: #92400e;
+  --ca-warning-soft: rgba(146, 64, 14, 0.12);
+  --ca-warning-fg: #121614;
+
+  --ca-danger: #b91c1c;
+  --ca-danger-hover: #991b1b;
+  --ca-danger-active: #7f1d1d;
+  --ca-danger-soft: rgba(185, 28, 28, 0.12);
+  --ca-danger-fg: #ffffff;
+  --ca-danger-text: #b91c1c;
+
+  --ca-info: #0369a1;
+  --ca-info-soft: rgba(3, 105, 161, 0.12);
+  --ca-info-fg: #121614;
+
+  --ca-disabled-bg: rgba(18, 22, 20, 0.05);
+  --ca-disabled-fg: rgba(18, 22, 20, 0.4);
+  --ca-disabled-border: rgba(18, 22, 20, 0.12);
+
+  --ca-selection-bg: rgba(18, 113, 78, 0.18);
+  --ca-selection-fg: #121614;
+
+  --ca-skeleton-bg: #e2e6e4;
+  --ca-skeleton-shimmer: #cbd2ce;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --ca-motion-fast: 0.01ms;
+    --ca-motion-standard: 0.01ms;
+    --ca-motion-slow: 0.01ms;
+  }
+}

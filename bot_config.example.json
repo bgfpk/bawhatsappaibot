@@ -1,0 +1,9 @@
+{
+  "prompt": "Configure campaign instructions in Conversion 02.",
+  "autoReply": false,
+  "followup_enabled": false,
+  "auto_followup_enabled": false,
+  "autoReloadEnabled": false,
+  "googleSheetWebhookUrl": "",
+  "groups": []
+}

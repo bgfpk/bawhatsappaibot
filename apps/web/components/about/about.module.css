@@ -1,0 +1,224 @@
+.section {
+  padding: 4rem 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.sectionMuted {
+  background-color: rgba(255, 255, 255, 0.02);
+  border-top: 1px solid var(--ca-border);
+  border-bottom: 1px solid var(--ca-border);
+}
+
+.header {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 3rem auto;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--ca-brand-strong, #24ad78);
+  background: rgba(16, 185, 129, 0.08);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  margin-bottom: 1rem;
+}
+
+.title {
+  font-size: 2.25rem;
+  font-weight: 800;
+  line-height: 1.2;
+  color: var(--ca-text-bright);
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: var(--ca-text-muted);
+}
+
+.hero {
+  padding: 4.5rem 1.5rem 3.5rem 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.heroTitle {
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  color: var(--ca-text-bright);
+  max-width: 900px;
+  margin: 0 auto 1.5rem auto;
+}
+
+.heroText {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  color: var(--ca-text-muted);
+  max-width: 760px;
+  margin: 0 auto 2.25rem auto;
+}
+
+.heroActions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background: var(--ca-card-bg);
+  border: 1px solid var(--ca-border);
+  border-radius: 12px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: border-color 0.2s ease;
+}
+
+.card:hover {
+  border-color: rgba(16, 185, 129, 0.35);
+}
+
+.cardIcon {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: rgba(16, 185, 129, 0.08);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  color: var(--ca-brand-strong, #24ad78);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cardTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--ca-text-bright);
+}
+
+.cardText {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--ca-text-muted);
+}
+
+.layerGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.layerCard {
+  background: var(--ca-card-bg);
+  border: 1px solid var(--ca-border);
+  border-radius: 12px;
+  padding: 1.75rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.layerBadge {
+  align-self: flex-start;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--ca-brand-strong, #24ad78);
+  background: rgba(16, 185, 129, 0.1);
+  padding: 0.2rem 0.6rem;
+  border-radius: 6px;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.listItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  color: var(--ca-text-muted);
+}
+
+.checkIcon {
+  color: var(--ca-brand-strong, #24ad78);
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+}
+
+.noticeBox {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--ca-border);
+  border-radius: 12px;
+  padding: 1.75rem;
+  margin-top: 2rem;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--ca-text-muted);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.noticeBox strong {
+  color: var(--ca-text-bright);
+}
+
+@media (max-width: 1024px) {
+  .layerGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 3rem 1.25rem;
+  }
+  .hero {
+    padding: 3rem 1.25rem 2.5rem 1.25rem;
+  }
+  .heroTitle {
+    font-size: 2.125rem;
+  }
+  .heroText {
+    font-size: 1.0625rem;
+  }
+  .title {
+    font-size: 1.75rem;
+  }
+  .layerGrid {
+    grid-template-columns: 1fr;
+  }
+}

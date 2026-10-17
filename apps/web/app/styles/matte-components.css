@@ -1,0 +1,285 @@
+:root {
+  --bg: var(--ca-canvas);
+  --bg-2: var(--ca-canvas-subtle);
+  --panel: var(--ca-surface-1);
+  --panel-strong: var(--ca-surface-2);
+  --line: var(--ca-border);
+  --line-strong: var(--ca-border-strong);
+  --text: var(--ca-text-primary);
+  --soft: var(--ca-text-secondary);
+  --muted: var(--ca-text-muted);
+  --mint: var(--ca-brand);
+  --green: var(--ca-brand-strong);
+  --red: var(--ca-rose);
+  --shadow: var(--ca-shadow-soft);
+  --home-card: var(--ca-surface-1);
+  --home-card-strong: var(--ca-surface-2);
+  --home-border: var(--ca-border);
+}
+
+html,
+body {
+  background: var(--ca-canvas);
+}
+
+body::before,
+.home-page::before,
+.home-hero::before,
+.home-hero::after,
+.home-rings,
+.hero-rings,
+.home-product-section::before {
+  display: none;
+  background: none;
+}
+
+.home-page {
+  --home-mint: var(--ca-brand);
+  --home-green: var(--ca-brand-strong);
+  --home-muted: var(--ca-text-muted);
+  --home-soft: var(--ca-text-secondary);
+}
+
+.home-hero h1 span {
+  color: var(--ca-brand);
+  background: none;
+  text-shadow: none;
+}
+
+.home-hero-copy > p,
+.home-section-head p,
+.home-step-card p,
+.home-feature-card p,
+.home-workspace-copy p,
+.home-team-layout p,
+.home-final-cta p {
+  color: var(--ca-text-secondary);
+}
+
+.nav,
+.footer-grid,
+.mobile-nav-panel,
+.hero-copy-panel,
+.hero-visual,
+.section-shell,
+.surface-card,
+.feature-card,
+.metric-card,
+.pricing-card,
+.contact-card,
+.search-panel,
+.about-callout,
+.article-body section,
+.legal-section,
+.faq-item,
+.product-area-card,
+.integration-card,
+.home-workspace,
+.home-step-card,
+.home-feature-card,
+.home-app-shell,
+.home-ai-card,
+.home-ai-control-card,
+.home-compare-card,
+.home-workflow-visual,
+.home-price-card,
+.home-team-signals article,
+.home-final-cta,
+.home-flow-inner,
+.home-flow-item,
+.home-center-arrow,
+.home-usecase-band,
+.home-faq-list details,
+.hero-product-preview,
+.home-phone,
+.home-phone-screen,
+.home-bubble,
+.home-app-panel,
+.home-order-item,
+.home-workflow-timeline,
+.product-conversation,
+.product-operation {
+  border-color: var(--ca-border);
+  background: var(--ca-surface-1);
+  background-image: none;
+  box-shadow: var(--ca-shadow-flat);
+  backdrop-filter: none;
+}
+
+.home-phone,
+.home-phone-screen {
+  background: var(--ca-surface-2);
+  background-image: none;
+  box-shadow: var(--ca-shadow-raised);
+}
+
+.home-bubble,
+.home-order-item,
+.home-workflow-timeline {
+  background: var(--ca-surface-3);
+  background-image: none;
+  box-shadow: none;
+}
+
+.home-float,
+.home-steps-grid,
+.home-step-no,
+.home-feature-icon,
+.home-float span,
+.home-wa-head span,
+.home-flow-icon,
+.home-center-arrow b,
+.home-lead-line i {
+  background-image: none;
+}
+
+.home-float,
+.home-steps-grid { background: var(--ca-surface-1); }
+.home-step-no,
+.home-feature-icon,
+.home-float span,
+.home-wa-head span,
+.home-flow-icon,
+.home-center-arrow b,
+.home-lead-line i { color: #061b11; background: #65e6a5; }
+
+.home-bubble-user {
+  color: #061b11;
+  background: #65e6a5;
+}
+
+.section-shell-muted,
+.section-shell-light,
+.home-app-panel,
+.home-dashboard-mini,
+.home-order-card,
+.home-workflow-phone,
+.home-workflow-summary,
+.product-status-list div,
+.billing-pillars article {
+  border-color: var(--ca-border);
+  background: var(--ca-surface-2);
+  background-image: none;
+  box-shadow: none;
+}
+
+.button-link-primary {
+  color: #061b11;
+  background: #36d986;
+  background-image: none;
+  box-shadow: none;
+}
+
+:root[data-theme="light"] .button-link-primary {
+  color: #ffffff;
+  background: #087a43;
+}
+
+:root[data-theme="light"] .home-kicker,
+:root[data-theme="light"] .home-label,
+:root[data-theme="light"] .home-trust-line,
+:root[data-theme="light"] .home-offer-line,
+:root[data-theme="light"] .home-note,
+:root[data-theme="light"] .home-app-top,
+:root[data-theme="light"] .home-app-top span,
+:root[data-theme="light"] .home-popular,
+:root[data-theme="light"] .home-card-title span,
+:root[data-theme="light"] .home-lead-line em,
+:root[data-theme="light"] .home-phone-actions span {
+  color: var(--ca-brand) !important;
+}
+
+:root[data-theme="light"] .home-wa-head,
+:root[data-theme="light"] .home-bubble,
+:root[data-theme="light"] .home-workspace-list span,
+:root[data-theme="light"] .home-compare-card li,
+:root[data-theme="light"] .home-price-card li,
+:root[data-theme="light"] .home-order-item,
+:root[data-theme="light"] .home-usecase-band span,
+:root[data-theme="light"] .home-faq-list summary {
+  color: var(--ca-text-primary);
+}
+
+:root[data-theme="light"] .home-ai-card {
+  color: var(--ca-text-primary);
+  background: var(--ca-surface-1);
+}
+
+.button-link-secondary,
+.button-link-ghost,
+.theme-toggle,
+.mobile-nav summary {
+  color: var(--ca-text-primary);
+  border-color: var(--ca-border);
+  background: var(--ca-surface-2);
+}
+
+.pill,
+.status-pill,
+.pricing-badge,
+.integration-status-available,
+.home-status-dot {
+  border-color: var(--ca-border-strong);
+  color: var(--ca-brand);
+  background: var(--ca-surface-2);
+}
+
+.integration-status-coming-soon {
+  border-color: var(--ca-border-strong);
+  color: var(--ca-amber);
+  background: var(--ca-surface-2);
+}
+
+.pricing-card-featured,
+.home-featured-price {
+  border-color: var(--ca-brand);
+  background: var(--ca-surface-1);
+  background-image: none;
+  box-shadow: var(--ca-shadow-soft);
+}
+
+.home-compare-red { border-color: var(--ca-rose); }
+.home-compare-green { border-color: var(--ca-brand); }
+
+.theme-toggle {
+  display: inline-flex;
+  width: 44px;
+  height: 44px;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--ca-border);
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 850;
+}
+
+.theme-toggle:hover { border-color: var(--ca-brand); }
+.theme-toggle-mobile { width: 100%; justify-content: flex-start; gap: 10px; padding: 11px 12px; }
+.mobile-nav-panel .theme-toggle-mobile { display: none; }
+
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 3px solid var(--ca-focus);
+  outline-offset: 3px;
+}
+
+:root[data-theme="light"] .brand-logo { content: url("/brand/black-arrow-logo-light.png"); }
+
+@media (max-width: 800px) {
+  .nav-actions .theme-toggle { display: none; }
+  .mobile-nav-panel .theme-toggle-mobile { display: flex; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

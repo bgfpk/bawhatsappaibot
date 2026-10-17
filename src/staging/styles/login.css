@@ -1,0 +1,93 @@
+.login {
+  min-height: 100vh;
+  max-width: 1100px;
+  margin: auto;
+  padding: 46px 36px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.login-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  font-size: 15px;
+}
+.login-card {
+  width: 100%;
+  max-width: 490px;
+  margin: 70px 0 50px;
+  padding: 38px;
+  background: linear-gradient(145deg, #202328, #17191d);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  box-shadow: 0 25px 80px #0004;
+}
+.login-card .eyebrow {
+  display: block;
+  margin-bottom: 22px;
+}
+.login-card h1 span {
+  color: var(--muted);
+}
+.login-card h1 {
+  font-size: 31px;
+}
+.google-button {
+  width: 100%;
+  background: #eeede9;
+  color: #161719;
+  margin-top: 17px;
+  justify-content: space-between;
+}
+.google-g {
+  font-size: 18px;
+  font-weight: 700;
+}
+.method-note {
+  font-size: 11px;
+  margin: 9px 0 16px;
+}
+.divider {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-size: 10px;
+  color: var(--muted);
+  margin: 24px 0;
+}
+.divider span {
+  height: 1px;
+  flex: 1;
+  background: var(--line);
+}
+.login-methods form button {
+  width: 100%;
+}
+.privacy-note {
+  border-top: 1px solid var(--line);
+  margin-top: 30px;
+  padding-top: 19px;
+  font-size: 11px;
+  color: var(--muted);
+}
+.small-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin-right: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+footer {
+  font-size: 11px;
+  color: var(--muted);
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  width: 100%;
+  margin-top: auto;
+  padding-top: 20px;
+}

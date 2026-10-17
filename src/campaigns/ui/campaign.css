@@ -1,0 +1,27 @@
+@import '../../staging/styles/settings.css';
+@import '../../staging/styles/controls.css';
+textarea, select { width:100%; background:#111416; color:var(--ink); border:1px solid var(--line); border-radius:7px; padding:12px 14px; font:inherit; margin:7px 0 16px; }
+textarea { resize:vertical; }
+.workspace-form { display:grid; gap:8px; margin-top:20px; }
+.workspace-form fieldset { border:0; padding:0; min-width:0; }
+.workspace-filters { display:flex; gap:16px; align-items:end; flex-wrap:wrap; }
+.workspace-filters label { flex:1; min-width:160px; }
+.workspace-filters button { margin-bottom:16px; }
+.workspace-cards { display:grid; gap:20px; grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr)); }
+.workspace-card { border:1px solid var(--line); border-radius:10px; padding:24px; min-width:0; }
+.workspace-card h2 { margin-top:18px; }
+.ai-actions,.knowledge-tabs { display:flex; flex-wrap:wrap; gap:10px; margin:16px 0; }
+.knowledge-tabs button { background:transparent; color:var(--muted); border:1px solid var(--line); }
+.knowledge-tabs button[aria-pressed=true] { color:var(--accent); border-color:var(--accent); }
+.ai-check { display:flex; align-items:center; gap:12px; margin:18px 0; }
+.ai-check input { width:auto; margin:0; flex-shrink:0; }
+.ai-editor label { display:block; }
+.ai-editor label.ai-check { display:flex; }
+.knowledge-row,.publication-row { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:14px; border-top:1px solid var(--line); padding:18px 0; }
+.knowledge-row h3 { margin:0; }
+.knowledge-document { border-top:1px solid var(--line); margin-top:18px; padding-top:18px; }
+.source-preview { white-space:pre-wrap; overflow-wrap:anywhere; font:inherit; max-height:420px; overflow:auto; }
+.lifecycle-controls { margin-top:16px; }
+.number-confirm { border:1px solid #665735; border-radius:8px; padding:18px; margin-top:18px; }
+button,textarea,select { max-width:100%; }
+@media(max-width:700px){ .cards { grid-template-columns:1fr; } .workspace-filters { display:block; } .panel,.workspace-card { padding:20px; } .publication-row { align-items:flex-start; } }

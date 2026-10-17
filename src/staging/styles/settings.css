@@ -1,0 +1,54 @@
+.settings-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+.settings-grid p {
+  margin: 10px 0 0;
+}
+.inline-form {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin: 25px 0;
+}
+.inline-form input {
+  margin: 0;
+}
+.inline-form button {
+  white-space: nowrap;
+}
+.table-wrap {
+  overflow: auto;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+th,
+td {
+  text-align: left;
+  padding: 13px 12px;
+  border-bottom: 1px solid var(--line);
+}
+th {
+  font-size: 10px;
+  text-transform: uppercase;
+  color: var(--muted);
+  letter-spacing: 1px;
+}
+.notice {
+  padding: 12px;
+  border: 1px solid #665735;
+  border-radius: 7px;
+  margin-top: 18px;
+  font-size: 12px;
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+}

@@ -1,0 +1,207 @@
+.home-visual {
+  position: relative;
+  min-height: 648px;
+  perspective: 1300px;
+}
+
+.home-rings {
+  position: absolute;
+  inset: 34px 20px auto auto;
+  width: 520px;
+  height: 520px;
+  border: 1px solid rgba(67, 243, 154, 0.12);
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.home-rings::before,
+.home-rings::after {
+  content: "";
+  position: absolute;
+  border: 1px solid rgba(67, 243, 154, 0.1);
+  border-radius: inherit;
+}
+
+.home-rings::before { inset: 58px; }
+.home-rings::after { inset: 118px; }
+
+.home-phone {
+  position: absolute;
+  left: 76px;
+  top: 4px;
+  z-index: 3;
+  width: 362px;
+  min-height: 640px;
+  border: 1px solid rgba(255, 255, 255, 0.17);
+  border-radius: 54px;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.24), rgba(255, 255, 255, 0.05) 15%, rgba(0, 0, 0, 0.76) 58%),
+    #0b0e0d;
+  box-shadow: 0 44px 120px rgba(0, 0, 0, 0.78), 0 0 0 7px rgba(255, 255, 255, 0.035);
+  padding: 16px;
+  transform: rotateY(-8deg) rotateX(3deg);
+}
+
+.home-phone::before {
+  content: "";
+  position: absolute;
+  top: 14px;
+  left: 50%;
+  z-index: 2;
+  width: 112px;
+  height: 28px;
+  transform: translateX(-50%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  background: #010302;
+}
+
+.home-phone-screen {
+  position: relative;
+  min-height: 606px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 42px;
+  background:
+    radial-gradient(circle at 88% 16%, rgba(67, 243, 154, 0.08), transparent 18rem),
+    linear-gradient(180deg, #0c1512, #040706);
+  padding: 58px 18px 18px;
+}
+
+.home-wa-head,
+.home-card-title,
+.home-app-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.home-wa-head {
+  margin-bottom: 22px;
+  color: #dffced;
+}
+
+.home-wa-head div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+  font-weight: 820;
+}
+
+.home-wa-head span {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  place-items: center;
+  border-radius: 15px;
+  background: linear-gradient(135deg, #c9ffe2, #43f39a);
+  color: #062012;
+  box-shadow: 0 0 28px rgba(67, 243, 154, 0.25);
+  font-weight: 920;
+}
+
+.home-wa-head i {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--home-mint);
+  box-shadow: 0 0 0 6px rgba(67, 243, 154, 0.12);
+}
+
+.home-chat-stack {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  gap: 12px;
+}
+
+.home-bubble {
+  width: fit-content;
+  max-width: 88%;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 17px;
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+  color: #e9fff3;
+  padding: 13px 14px;
+  font-size: 14px;
+  line-height: 1.42;
+}
+
+.home-user {
+  justify-self: end;
+  border: 0;
+  background: linear-gradient(135deg, #dbffec, #61efa5);
+  color: #07140d;
+  font-weight: 760;
+}
+
+.home-ai-card {
+  margin-top: 8px;
+  border-radius: 25px;
+  background: linear-gradient(180deg, #ffffff, #eafff3);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.4);
+  color: #06120c;
+  padding: 18px;
+}
+
+.home-ai-card strong {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 12px;
+  font-size: 18px;
+  font-weight: 880;
+}
+
+.home-spark {
+  display: inline-grid;
+  width: 26px;
+  height: 26px;
+  place-items: center;
+  border-radius: 10px;
+  background: #e7fff1;
+  color: #14bc70;
+  font-weight: 950;
+}
+
+.home-ai-card p {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 640;
+  line-height: 1.48;
+}
+
+.home-ai-card-compact {
+  margin-top: 0;
+  padding: 15px;
+}
+
+.home-ai-card-compact strong {
+  margin-bottom: 8px;
+  font-size: 15px;
+}
+
+.home-ai-card-compact p {
+  font-size: 13px;
+}
+
+.home-phone-actions,
+.home-metric-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 9px;
+  margin-top: 14px;
+}
+
+.home-phone-actions span {
+  border: 1px solid rgba(67, 243, 154, 0.48);
+  border-radius: 13px;
+  background: rgba(67, 243, 154, 0.06);
+  color: #aaffd4;
+  padding: 12px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 860;
+}

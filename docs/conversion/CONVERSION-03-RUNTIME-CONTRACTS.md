@@ -1,0 +1,15 @@
+# Black Arrow — publication and transport integration boundaries
+
+`src/campaigns/runtime-context.ts` exposes `resolveCampaignRuntime(store, input)`. Inputs carry account, campaign, optional assigned number, question and explicitly scoped conversation turns. Repository lookups require account ownership and validate number assignment. Cross-campaign or cross-number conversation turns are excluded.
+
+The result contains the current immutable publication version, execution epoch, published configuration, exact published source facts and filtered conversation context. Draft changes are never substituted for a publication. Published facts are explicitly authoritative over conflicting or stale memory; knowledge text is quoted data, never executable instructions. Unknown/expired structured prices are omitted from runtime retrieval. This returns source context, not a generated answer.
+
+`generationEnabled` and `transportEnabled` remain false. `configuredForReplies` describes saved campaign intent only. Work remains held until separately authorized execution revalidates the current lifecycle, publication version, assignment, epoch and account. Archive, pause, deletion, publication changes and assignment changes invalidate old execution assumptions without sending, transferring or discarding work.
+
+The copied `src/services/ai-handler.ts`, `customer-bot-prompt-service.ts`, `gemini-provider-service.ts`, `ai-provider-policy-service.ts` and `secret-crypto-service.ts` remain available. Conversion 04 should resolve this campaign context before entering generation, adapt it to the existing prompt/provider interface, and enforce the published-knowledge precedence after generation. Current text routing still blocks Gemini and must be changed deliberately; an environment toggle alone is insufficient.
+
+Conversion 04 requires one encrypted account-wide Google AI Studio key, masked Save/Replace/Remove controls, an explicit owner-triggered real Test action, server-only SDK invocation, timeouts, usage/error reporting and tests for cross-account key isolation. No campaign storage or dashboard framework replacement is needed. No key, fake provider or paid request was introduced here.
+
+Number management remains account-wide with separate campaign assignment. The registry currently permits only disconnected, authorization-required, recovery-required and removed states; none can be reported as connected. An assignment has a composite ownership foreign key and unique current number constraint. Reassignment requires a later explicit transfer workflow. Disconnection/recovery must hold work, revoke stale worker assumptions and retain private custody according to the approved transport policy.
+
+The requested QR-first path remains the plan. Actual copied QR/Baileys connection and recovery modules remain unchanged. Conversion 05 must add authorized pairing/status/session custody and genuine inbound/outbound receipts; it must not silently replace QR with another transport or interpret this storage contract as a live connection.

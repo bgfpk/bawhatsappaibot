@@ -1,0 +1,233 @@
+.page-hero {
+  padding: 56px 0 26px;
+}
+
+.hero-grid,
+.page-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  align-items: center;
+  gap: 34px;
+}
+
+.hero-copy-panel,
+.surface-card,
+.feature-card,
+.pricing-card,
+.metric-card,
+.faq-item,
+.contact-card,
+.search-panel,
+.about-callout,
+.article-body section,
+.legal-section,
+.toc-card {
+  border: 1px solid var(--line);
+  background: var(--panel);
+  box-shadow: var(--shadow);
+}
+
+.hero-copy-panel {
+  position: relative;
+  overflow: hidden;
+  padding: 40px;
+  border-radius: var(--radius-xl);
+}
+
+.hero-copy-panel::after {
+  content: "";
+  position: absolute;
+  right: -80px;
+  bottom: -120px;
+  width: 260px;
+  height: 260px;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(154, 247, 212, 0.15), transparent 68%);
+}
+
+.hero-copy-panel > * {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-copy-panel h1 {
+  max-width: 12ch;
+  margin: 18px 0;
+  font-size: clamp(3.3rem, 7vw, 6rem);
+  line-height: 0.95;
+}
+
+.hero-copy-panel p,
+.section-description,
+.feature-card p,
+.pricing-card p,
+.metric-detail,
+.contact-card p,
+.surface-card p,
+.article-body p,
+.article-body li,
+.legal-section p,
+.legal-section li,
+.search-panel p {
+  color: var(--muted);
+  line-height: 1.72;
+}
+
+.hero-copy {
+  max-width: 670px;
+  font-size: 1.05rem;
+}
+
+.hero-note {
+  margin-top: 18px;
+  color: var(--soft);
+}
+
+.hero-actions,
+.button-row {
+  margin-top: 24px;
+}
+
+.mini-row,
+.pill-row {
+  margin-top: 22px;
+}
+
+.mini-row span,
+.route-chip {
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.045);
+  padding: 9px 12px;
+  color: var(--soft);
+  font-size: 0.88rem;
+  font-weight: 800;
+}
+
+.hero-visual {
+  position: relative;
+  min-height: 610px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 42px;
+  background:
+    radial-gradient(circle at 24% 18%, rgba(154, 247, 212, 0.16), transparent 28%),
+    radial-gradient(circle at 84% 18%, rgba(37, 211, 102, 0.1), transparent 22%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.025));
+  box-shadow: var(--shadow);
+}
+
+.hero-rings {
+  position: absolute;
+  inset: 44px;
+  border-radius: 999px;
+  border: 1px solid rgba(154, 247, 212, 0.16);
+  box-shadow:
+    inset 0 0 0 70px rgba(154, 247, 212, 0.025),
+    inset 0 0 0 150px rgba(255, 255, 255, 0.025);
+}
+
+.phone,
+.dashboard-card,
+.float-card {
+  position: absolute;
+  z-index: 1;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(7, 12, 10, 0.88);
+  box-shadow: 0 24px 68px rgba(0, 0, 0, 0.34);
+}
+
+.phone {
+  left: 50%;
+  top: 50%;
+  width: min(330px, 56%);
+  transform: translate(-50%, -50%);
+  border-radius: 34px;
+  padding: 14px;
+}
+
+.phone-screen {
+  border-radius: 26px;
+  background: rgba(255, 255, 255, 0.045);
+  padding: 16px;
+}
+
+.wa-head,
+.card-title,
+.pricing-card-top,
+.faq-question,
+.contact-card-top,
+.board-top,
+.search-row,
+.handoff-strip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.wa-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 900;
+}
+
+.bot-mark,
+.avatar,
+.feature-icon,
+.step-no,
+.path-no,
+.flow-icon,
+.option-icon {
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  background: rgba(154, 247, 212, 0.12);
+  color: var(--mint);
+  font-weight: 900;
+}
+
+.bot-mark {
+  width: 30px;
+  height: 30px;
+}
+
+.online {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: var(--green);
+  box-shadow: 0 0 18px rgba(37, 211, 102, 0.8);
+}
+
+.chat-stack {
+  display: grid;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.bubble,
+.ai-card {
+  border-radius: 18px;
+  padding: 11px 13px;
+  color: var(--soft);
+  background: rgba(255, 255, 255, 0.07);
+  line-height: 1.55;
+}
+
+.bubble.user {
+  margin-left: auto;
+  color: #062416;
+  background: #d9f7e5;
+}
+
+.ai-card strong {
+  color: var(--mint);
+}
+
+.final-cta-card {
+  background:
+    radial-gradient(circle at 12% 18%, rgba(154, 247, 212, 0.14), transparent 28%),
+    linear-gradient(180deg, rgba(8, 14, 12, 0.92), rgba(6, 10, 9, 0.96));
+}

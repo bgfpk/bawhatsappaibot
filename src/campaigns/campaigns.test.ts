@@ -1,0 +1,66 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { mkdtempSync, rmSync } from 'node:fs';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
+import { CampaignStore } from './store';
+import { CampaignPublications } from './publications';
+import { CampaignKnowledge } from './knowledge/repository';
+import { CampaignCatalogue } from '../catalogue/repository';
+import { retrievePublished, resolveCampaignRuntime } from './runtime-context';
+
+test('ownership, immutable publication, rollback, lifecycle recovery, assignment and restart remain scoped',()=>{
+  const dir=mkdtempSync(join(tmpdir(),'blackarrow-campaigns-')), file=join(dir,'test.sqlite');
+  let store=new CampaignStore(file);
+  try {
+    let pub=new CampaignPublications(store); const knowledge=new CampaignKnowledge(store),catalogue=new CampaignCatalogue(store);
+    const a=store.create('test-owner-a',{name:'Synthetic A',description:'',timezone:'UTC'});
+    const b=store.create('test-owner-a',{name:'Synthetic B',description:'',timezone:'UTC'});
+    const c=store.create('test-owner-b',{name:'Synthetic C',description:'',timezone:'UTC'});
+    const rev=()=>store.owned('test-owner-a',a.id).revision;
+    assert.throws(()=>store.owned('test-owner-b',a.id),{status:404});
+    assert.throws(()=>store.edit('test-owner-a',c.id,c.revision,{name:'x',description:'',timezone:'UTC'}),{status:404});
+    pub.save('test-owner-a',a.id,rev(),{identity:'Test only',description:'',objective:'',instructions:'Synthetic instructions one',style:'friendly',languages:['English'],enabled:true});
+    const item=knowledge.save('test-owner-a',a.id,rev(),{kind:'note',fields:{title:'Synthetic fact',body:'Test-only alpha evidence'},enabled:true});
+    const product=catalogue.save('test-owner-a',a.id,rev(),{kind:'product',name:'Synthetic product',description:'Test-only alpha evidence',price:''});
+    pub.publish('test-owner-a',a.id,rev());
+    const first=pub.read('test-owner-a',a.id);
+    pub.save('test-owner-a',a.id,rev(),{...pub.draft('test-owner-a',a.id),instructions:'Synthetic instructions two'});
+    assert.equal(pub.read('test-owner-a',a.id).snapshot.config.instructions,'Synthetic instructions one');
+    assert.equal(pub.state('test-owner-a',a.id).publicationState,'Pending changes');
+    assert.equal(pub.read('test-owner-a',b.id),null);
+    assert.equal(retrievePublished(store,'test-owner-a',b.id,'alpha').sources.length,0);
+    assert.equal(retrievePublished(store,'test-owner-a',a.id,'alpha').sources[0].id,product.id);
+    assert.equal(store.db.prepare('SELECT count(*) n FROM campaign_knowledge WHERE id=?').get(item.id)!.n,1);
+    pub.publish('test-owner-a',a.id,rev());
+    pub.rollback('test-owner-a',a.id,rev(),first.version);
+    assert.equal(pub.read('test-owner-a',a.id).snapshot.config.instructions,'Synthetic instructions one');
+    assert.throws(()=>store.db.prepare('UPDATE campaign_publications SET snapshot=?').run('{}'),/Immutable/);
+    assert.throws(()=>knowledge.remove('test-owner-a',b.id,store.owned('test-owner-a',b.id).revision,item.id),{status:404});
+    store.db.prepare("INSERT INTO campaign_number_registry VALUES(?,?,'disconnected')").run('test-owner-a','test-number-one');
+    store.db.prepare("INSERT INTO campaign_number_registry VALUES(?,?,'disconnected')").run('test-owner-a','test-number-two');
+    store.assignNumber('test-owner-a',a.id,'test-number-one'); store.assignNumber('test-owner-a',a.id,'test-number-two');
+    assert.throws(()=>store.assignNumber('test-owner-a',b.id,'test-number-one'),/already assigned/);
+    const context=resolveCampaignRuntime(store,{accountId:'test-owner-a',campaignId:a.id,numberId:'test-number-one',query:'alpha',conversation:[
+      {accountId:'test-owner-a',campaignId:b.id,numberId:'test-number-one',role:'user',text:'must not cross campaigns'}]});
+    assert.equal(context.conversation.length,0); assert.equal(context.generationEnabled,false);
+    assert.equal(context.config.instructions,'Synthetic instructions one');
+    assert.equal(resolveCampaignRuntime(store,{accountId:'test-owner-a',campaignId:a.id,numberId:'test-number-two',query:'alpha'}).publicationVersion,context.publicationVersion);
+    store.lifecycle('test-owner-a',a.id,rev(),'pause'); store.lifecycle('test-owner-a',a.id,rev(),'resume');
+    store.lifecycle('test-owner-a',a.id,rev(),'archive');
+    assert.throws(()=>pub.save('test-owner-a',a.id,rev(),pub.draft('test-owner-a',a.id)),/Restore/);
+    store.lifecycle('test-owner-a',a.id,rev(),'restore');
+    assert.throws(()=>store.lifecycle('test-owner-a',a.id,rev(),'delete','wrong'),/confirm/);
+    store.lifecycle('test-owner-a',a.id,rev(),'delete','Synthetic A');
+    assert.equal(store.list('test-owner-a','','',true).length,1);
+    store.lifecycle('test-owner-a',a.id,rev(),'cancel_removal');
+    assert.equal(store.owned('test-owner-a',a.id).lifecycle,'paused');
+    assert.equal(store.owned('test-owner-a',a.id).work_hold,1);
+    assert.equal(store.numbers('test-owner-a',a.id).length,2);
+    assert.ok(Number(store.db.prepare('SELECT count(*) n FROM campaign_revision_history WHERE account_id=? AND campaign_id=?').get('test-owner-a',a.id)!.n)>5);
+    const saved=rev(); store.close(); store=new CampaignStore(file); pub=new CampaignPublications(store);
+    assert.equal(store.owned('test-owner-a',a.id).revision,saved);
+    assert.equal(pub.read('test-owner-a',a.id).snapshot.config.instructions,'Synthetic instructions one');
+    assert.equal(store.db.prepare('PRAGMA integrity_check').get()!.integrity_check,'ok');
+  } finally {store.close();rmSync(dir,{recursive:true,force:true});}
+});

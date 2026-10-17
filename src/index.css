@@ -1,0 +1,305 @@
+@import "tailwindcss";
+@import "./styles/blackarrow-theme.css";
+@import "./styles/theme-readability.css";
+@import "./styles/dashboard-design-system.css";
+@import "./design-system/tokens.css";
+@import "./design-system/agGridBridge.css";
+@custom-variant dark (&:where(.dark, .dark *));
+
+input, select, textarea {
+  color-scheme: light;
+  color: var(--ca-text-primary);
+}
+
+html.dark input, html.dark select, html.dark textarea {
+  color-scheme: dark;
+  color: var(--ca-text-primary);
+}
+
+/* placeholder colors removed for tailwind support */
+
+body {
+  background: var(--ca-canvas-0);
+  color: var(--ca-text-primary);
+  overflow-x: hidden;
+  font-weight: 400;
+  text-rendering: optimizeLegibility;
+}
+
+html.dark body {
+  background: var(--ca-canvas-0);
+  color: var(--ca-text-primary);
+}
+
+#root {
+  min-height: 100vh;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+:where(h1).font-black {
+  font-weight: 700;
+}
+
+:where(h2, h3, h4, h5, h6).font-black {
+  font-weight: 700;
+}
+
+:where(h1).font-bold,
+:where(h2, h3, h4, h5, h6).font-bold {
+  font-weight: 600;
+}
+
+:where(.dashboard-main h1).font-black,
+:where(.dashboard-main h2).font-black,
+:where(.dashboard-main h3).font-black {
+  font-weight: 700;
+}
+
+:where(.dashboard-main h4, .dashboard-main h5, .dashboard-main h6).font-black {
+  font-weight: 600;
+}
+
+:where(.dashboard-main p, .dashboard-main li, .dashboard-main label).font-bold,
+:where(.reveal p, .reveal li, .reveal label).font-bold {
+  font-weight: 600;
+}
+
+:where(.reveal p, .reveal li, .reveal label).font-medium {
+  font-weight: 500;
+}
+
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: var(--ca-border-strong) transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--ca-border-strong);
+  border-radius: 999px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.dashboard-content {
+  position: relative;
+  z-index: 1;
+}
+
+.dashboard-shell {
+  position: relative;
+}
+
+.dashboard-topbar {
+  background: var(--ca-surface-1);
+}
+
+.dashboard-main input,
+.dashboard-main select,
+.dashboard-main textarea {
+  border-radius: 14px;
+  border: 1px solid var(--ca-border-default);
+  background: var(--ca-surface-2);
+  transition: border-color 160ms ease, box-shadow 160ms ease, background-color 160ms ease;
+}
+
+.dashboard-main textarea {
+  min-height: 7rem;
+  max-height: 16rem;
+  resize: vertical;
+}
+
+.dark .dashboard-main input,
+.dark .dashboard-main select,
+.dark .dashboard-main textarea {
+  background: var(--ca-surface-2);
+  border-color: var(--ca-border-default);
+}
+
+.dashboard-main input:focus,
+.dashboard-main select:focus,
+.dashboard-main textarea:focus {
+  box-shadow: 0 0 0 3px var(--ca-focus-ring);
+}
+
+.dashboard-main button {
+  transition: transform 160ms ease, box-shadow 160ms ease, background-color 160ms ease, border-color 160ms ease;
+}
+
+.dashboard-main button:hover {
+  box-shadow: var(--ca-shadow-soft);
+}
+
+.dashboard-main table {
+  overflow: hidden;
+  border-radius: 18px;
+}
+
+.dashboard-main table thead th {
+  letter-spacing: 0.08em;
+}
+
+.dashboard-main h1,
+.dashboard-main h2 {
+  letter-spacing: -0.01em;
+}
+
+.dashboard-main .rounded-\[2rem\] {
+  border-radius: 1.35rem;
+}
+
+.dashboard-main .rounded-2xl {
+  border-radius: 1rem;
+}
+
+.public-tilt {
+  transform: perspective(1200px) rotateX(5deg) rotateY(-3deg) scale(0.98);
+  transform-style: preserve-3d;
+  transform-origin: center;
+}
+
+.public-card-hover {
+  transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+}
+
+.public-card-hover:hover {
+  transform: translateY(-6px);
+}
+
+.public-float {
+  animation: public-float 5s ease-in-out infinite alternate;
+}
+
+.public-pulse-soft {
+  animation: public-pulse-soft 2.2s ease-in-out infinite;
+}
+
+.public-wave-bar {
+  animation: public-wave-bar 1.2s ease-in-out infinite;
+  transform-origin: center bottom;
+}
+
+.public-connector {
+  background: linear-gradient(90deg, rgba(37, 211, 102, 0.12), rgba(37, 211, 102, 0.78), rgba(37, 211, 102, 0.12));
+  overflow: hidden;
+}
+
+.public-connector::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 36%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.75), transparent);
+  animation: public-connector 2.8s ease-in-out infinite;
+}
+
+.public-shimmer {
+  animation: public-shimmer 2.2s ease-in-out infinite;
+}
+
+.public-primary-button {
+  background: #148f4d;
+  color: #fff;
+  box-shadow: none;
+  text-shadow: none;
+}
+
+.public-primary-button:hover {
+  background: #0f7f43;
+  box-shadow: none;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 560ms ease, transform 560ms ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes public-float {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, -10px, 0);
+  }
+}
+
+@keyframes public-pulse-soft {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.1);
+    opacity: 1;
+  }
+  50% {
+    box-shadow: 0 0 0 9px rgba(37, 211, 102, 0);
+    opacity: 0.82;
+  }
+}
+
+@keyframes public-wave-bar {
+  0%, 100% {
+    transform: scaleY(0.55);
+  }
+  50% {
+    transform: scaleY(1.05);
+  }
+}
+
+@keyframes public-connector {
+  0% {
+    transform: translateX(-120%);
+  }
+  100% {
+    transform: translateX(320%);
+  }
+}
+
+@keyframes public-shimmer {
+  0%, 100% {
+    opacity: 0.55;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 1199px) {
+  .public-tilt {
+    transform: perspective(1200px) rotateX(3deg) rotateY(-1.5deg) scale(0.96);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .reveal,
+  .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  .public-tilt,
+  .public-card-hover:hover {
+    transform: none;
+  }
+}

@@ -1,0 +1,293 @@
+/* Scoped CSS Module for BlackArrow Features Page */
+
+.featuresRoot {
+  min-height: 100vh;
+  background-color: var(--ca-canvas, #0a0c0d);
+  color: var(--ca-text-primary, #f2f4f3);
+  font-family: inherit;
+  line-height: 1.55;
+}
+
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+.section {
+  padding-top: 3.5rem;
+  padding-bottom: 3.5rem;
+  border-bottom: 1px solid var(--ca-border-subtle, rgba(255, 255, 255, 0.065));
+  scroll-margin-top: 14rem;
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
+    scroll-margin-top: 16.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section {
+    scroll-margin-top: 17.5rem;
+  }
+}
+
+.sectionHeader {
+  text-align: center;
+  max-width: 48rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2.25rem;
+}
+
+@media (min-width: 768px) {
+  .sectionHeader {
+    margin-bottom: 3.5rem;
+  }
+}
+
+.eyebrow {
+  display: inline-block;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ca-brand-strong, #24ad78);
+  margin-bottom: 0.625rem;
+}
+
+.sectionTitle {
+  font-size: clamp(1.625rem, 3.2vw, 2.75rem);
+  font-weight: 800;
+  color: var(--ca-text-primary);
+  line-height: 1.25;
+  margin-bottom: 0.875rem;
+}
+
+.sectionDesc {
+  font-size: 1rem;
+  color: var(--ca-text-secondary, #a1a7a4);
+  line-height: 1.6;
+}
+
+@media (min-width: 768px) {
+  .sectionDesc {
+    font-size: 1.0625rem;
+  }
+}
+
+/* Card Styling */
+.card {
+  background-color: var(--ca-surface-1, #171b1e);
+  border: 1px solid var(--ca-border, rgba(255, 255, 255, 0.11));
+  border-radius: 0.875rem;
+  padding: 1.125rem;
+  transition: border-color var(--ca-motion-base, 180ms) ease, box-shadow var(--ca-motion-base, 180ms) ease;
+}
+
+@media (min-width: 768px) {
+  .card {
+    padding: 1.5rem;
+  }
+}
+
+.card:hover {
+  border-color: var(--ca-border-strong, rgba(255, 255, 255, 0.18));
+}
+
+/* Centered Flex Grid Utilities */
+.centeredGrid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.25rem;
+  width: 100%;
+}
+
+.gridItem4 {
+  flex: 1 1 260px;
+  max-width: 380px;
+}
+
+.gridItem3 {
+  flex: 1 1 280px;
+  max-width: 420px;
+}
+
+.gridItemSmall {
+  flex: 1 1 220px;
+  max-width: 320px;
+}
+
+@media (max-width: 639px) {
+  .gridItem4,
+  .gridItem3,
+  .gridItemSmall {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+}
+
+/* Mockup UI Shell */
+.mockupShell {
+  background-color: var(--ca-canvas-1, #101315);
+  border: 1px solid var(--ca-border, rgba(255, 255, 255, 0.11));
+  border-radius: 0.875rem;
+  overflow: hidden;
+  box-shadow: var(--ca-shadow-raised, 0 8px 22px rgba(0, 0, 0, 0.16));
+}
+
+.mockupHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.625rem 1rem;
+  background-color: var(--ca-surface-1, #171b1e);
+  border-bottom: 1px solid var(--ca-border-subtle);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--ca-text-secondary);
+}
+
+.mockupBody {
+  padding: 1rem;
+}
+
+@media (min-width: 768px) {
+  .mockupBody {
+    padding: 1.25rem;
+  }
+}
+
+/* Badge */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.25rem 0.625rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background-color: var(--ca-surface-3, #242a2f);
+  color: var(--ca-text-secondary);
+  border: 1px solid var(--ca-border-subtle);
+}
+
+.badgeBrand {
+  background-color: var(--ca-brand-soft, rgba(50, 207, 145, 0.1));
+  color: var(--ca-brand-strong, #24ad78);
+  border-color: rgba(50, 207, 145, 0.2);
+}
+
+/* Category Sticky Navigation */
+.stickyNav {
+  position: sticky;
+  top: 4rem;
+  z-index: 40;
+  background-color: rgba(10, 12, 13, 0.94);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--ca-border-subtle);
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.categoryList {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  overflow-x: auto;
+  white-space: nowrap;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding-bottom: 0.25rem;
+}
+
+.categoryList::-webkit-scrollbar {
+  display: none;
+}
+
+.categoryLink {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.45rem 0.875rem;
+  border-radius: 9999px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--ca-text-secondary);
+  text-decoration: none;
+  background-color: var(--ca-surface-1);
+  border: 1px solid var(--ca-border-subtle);
+  scroll-snap-align: start;
+  touch-action: manipulation;
+  transition: all 140ms ease;
+  min-height: 2.25rem;
+}
+
+.categoryLink:hover,
+.categoryLink:focus-visible {
+  color: var(--ca-text-primary);
+  background-color: var(--ca-surface-2);
+  border-color: var(--ca-brand);
+  outline: none;
+}
+
+/* Primary & Secondary Buttons */
+.btnPrimary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: var(--ca-brand, #32cf91);
+  color: var(--ca-text-inverse, #ffffff);
+  font-weight: 700;
+  font-size: 0.9375rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.625rem;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  min-height: 2.75rem;
+  transition: background-color 140ms ease, box-shadow 140ms ease;
+}
+
+.btnPrimary:hover {
+  background-color: var(--ca-brand-strong, #24ad78);
+  box-shadow: 0 4px 16px rgba(50, 207, 145, 0.25);
+}
+
+.btnSecondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: var(--ca-surface-2, #1d2226);
+  color: var(--ca-text-primary);
+  font-weight: 600;
+  font-size: 0.9375rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.625rem;
+  text-decoration: none;
+  border: 1px solid var(--ca-border, rgba(255, 255, 255, 0.11));
+  cursor: pointer;
+  min-height: 2.75rem;
+  transition: background-color 140ms ease, border-color 140ms ease;
+}
+
+.btnSecondary:hover {
+  background-color: var(--ca-surface-3);
+  border-color: var(--ca-border-strong);
+}

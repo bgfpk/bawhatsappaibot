@@ -1,0 +1,30 @@
+{
+  "application": "Black Arrow",
+  "source_host": "contabo2",
+  "source_directory": "/opt/blackarrow-conversion/implementation",
+  "source_commit": "ee7256dc45f1a2c19d7d7b3e67780c948f068553",
+  "source_file_count": 1492,
+  "publication_notes": "Fresh sanitized Git history. Git export normalizes CRLF to LF. Application behavior is unchanged except the copied optional IndexNow submission utility now requires an externally provided verification key; test key literals are generated synthetic fixtures.",
+  "exported_source_tree_sha256": "684881b09b6049a924cc3c91169b180c738d64a92ecd0364c5195bca6544c5c7",
+  "sanitization_changes": [
+    ".gitignore: deny runtime/private artifacts",
+    ".env.example: blank optional IndexNow variable",
+    "scripts/submit-indexnow.mjs: external verification key, fail closed when absent",
+    "scripts/nginx-blackarrow.conf: placeholder verification route",
+    "src/services/gemini-provider-service.test.ts: generated synthetic key fixtures",
+    "src/services/gemini-tts-service.test.ts: generated synthetic key fixtures"
+  ],
+  "excluded_source_files": [
+    {
+      "category": "Copied IndexNow verification token file",
+      "path": "apps/web/public/<verification-token>.txt"
+    }
+  ],
+  "review_only_additions": [
+    "README.md",
+    ".gitleaks.toml",
+    "docs/conversion/",
+    "docs/review/",
+    "scripts/review-staging-fixture.mjs"
+  ]
+}

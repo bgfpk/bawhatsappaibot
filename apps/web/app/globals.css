@@ -1,0 +1,23 @@
+@import "./styles/blackarrow-theme.css";
+@import "./styles/base.css";
+@import "./styles/shell.css";
+@import "./styles/marketing.css";
+@import "./styles/content.css";
+@import "./styles/responsive.css";
+@import "./styles/home.css";
+@import "./styles/simplification.css";
+@import "./styles/polish.css";
+@import "./styles/matte-components.css";
+
+body.stitch-home-active {
+  background-color: #0a0c0d !important;
+  color: #f8faf9 !important;
+  color-scheme: dark !important;
+}
+
+body.stitch-home-active .site-header,
+body.stitch-home-active .footer,
+body.homepage-prototype-active .site-header,
+body.homepage-prototype-active .footer {
+  display: none !important;
+}

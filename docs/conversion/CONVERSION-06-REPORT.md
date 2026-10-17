@@ -1,0 +1,31 @@
+# Black Arrow — Conversion 06
+
+## PREVIOUS DEVELOPMENT SUMMARY
+Conversion 04 baseline: `05652b0`. Conversion 05 was first deployed to isolated conversion staging after correcting its missing work directory and writable Vite-cache mount. Conversion 06 explicitly authorized this deployment. The production-deletion investigation was not reopened.
+
+## IMPLEMENTED CHANGES
+The converted dashboard now has one main instruction editor, Save Draft, Publish, enabled status and Test Assistant. Timezone/name/language configuration and the obsolete advanced controls are absent from this flow. New campaigns use an internal Asia/Karachi timezone; existing timezone records are retained. No business-hours gate or customer reply/token quota blocks the new pipeline.
+
+Products & Services supports add, edit, optional price, archive/restore and publication. Only the current published catalogue enters new Gemini context. Old generic knowledge, documents and immutable publications remain stored, with generic retrieval excluded. Draft changes never silently replace published facts.
+
+The deployed runtime registers a private incoming → scoped conversation → published instructions/catalogue → Gemini SDK → quality validation → encrypted delivery-job pipeline. It includes event deduplication, conversation ordering/supersession, persistent generation/delivery state, bounded retries, alerts, encrypted memory, retention/reset, session/publication fencing and verified receipt reconciliation. Known not-attempted delivery failures reuse the saved reply; unknown outcomes never automatically resend or regenerate. Local startup/periodic maintenance performs recovery and retention only. Customer generation and sending activation remain closed.
+
+## SOURCE FUNCTIONALITY REUSED
+Adapted the transferred language preference, combined reply/memory, customer memory merge, context reducer/product selection, retry-delay and reply-quality services. Extracted pure summary-rendering and business-flow helpers to avoid loading CRM/order storage, billing or another text provider. Reused account Gemini custody, the genuine SDK runtime, immutable publications and number/session management. Memory is scoped by account, campaign, number and customer; first-turn English/Urdu/Roman Urdu and explicit switches operate automatically. Published business facts outrank memory. Explicit legacy memory-disable choices remain retained and respected; reset does not re-enable them. Active context expires after 14 days; transient encrypted job payloads after 24 hours, with local maintenance clearing expired contents. Private recovery backups remain protected separately.
+
+## TESTS AND STAGING STATUS
+Focused tests, TypeScript and builds passed; compiled Express API checks cover catalogue CRUD/publication, auth/origin/ownership, alerts/reset and blocked inbound capabilities. Real Google SDK requests were exercised against an offline local protocol fixture through the actual processing pipeline, producing non-sending captures. Restart tests cover encrypted memory/key persistence, safe session revalidation and unknown outcomes. One desktop/mobile browser pass used disposable storage, with no owner sample data. No new paid Google request or customer send was issued. The saved verified Gemini key, private custody and owner authentication/preferences remained unchanged; request-audit count stayed at one. Production source/private configuration/container identities and branding/source-hash evidence are recorded under `conversion-audit/evidence/conversion-06`. Public production was not replaced; no production database writes/restarts, original-VPS access or GitHub push occurred.
+
+Case-insensitive scans found zero prior-product branding matches in Windows source/assets, decompressed archive members, the final build, Contabo2 dependencies and reachable Git history. An apparent compressed-byte abbreviation match was verified as random compressed data, with all archive member paths and contents clean; the archive was not modified blindly. All six source snapshots match their manifests, preserving Conversions 01–05. No legal notices or protected recovery backups were removed.
+
+## WHAT I CAN TEST RIGHT NOW
+Open <http://localhost:3412/campaigns> through the existing SSH tunnel. Select a real campaign, save/publish its instructions, add/edit/publish Products & Services, and explicitly use Test Assistant. The existing account Gemini key is still saved and verified. Test Assistant makes a real Google request only when you click Send. Number management remains available. The public HTTPS hostname continues to serve the older production release.
+
+## WHAT REMAINS BLOCKED FOR LIVE WHATSAPP
+Verified WhatsApp platform/transport authorization and separate owner pairing/sending activation approval are still required. No live QR, customer transport or paid background worker is enabled. The registered engine's default grant verifier and generation/delivery activation gates stay closed. Synthetic SDK fixtures/captures are not live WhatsApp evidence. Owner campaign live Gemini acceptance remains deferred as previously requested.
+
+## CONVERSION 07 READINESS
+Use `src/conversation/{runtime,jobs,pipeline,memory,generation}.ts`, `src/catalogue`, existing `src/gemini` and `src/numbers`. The service remains `blackarrow-conversion-02` at `/opt/blackarrow-conversion/implementation`. After verified authorization/approval, wire the approved private adapter, canonical customer identity, encrypted provider-auth custody and bounded worker into the existing runtime; then separately validate a real QR session, incoming message, Gemini response and provider receipt. Revalidate pending jobs against current sessions/publications before resuming. Unknown completion requires verified reconciliation. Preserve `/var/lib/blackarrow-conversion-02/recovery/` and custody; rollback code/build without automatically restoring an old database over new owner data. Release/recovery paths and the accepted commit are in the evidence files.
+
+## PROMPT LEDGER
+Conversion 05 deployed; Conversion 06 implemented and deployed to isolated staging. Conversions 01–05 snapshots remain preserved. Live WhatsApp remains disabled. Conversion 07 has not started. Stop after this delivery.

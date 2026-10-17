@@ -1,0 +1,298 @@
+.phone-actions,
+.metric-grid,
+.feature-grid,
+.pricing-grid,
+.split-grid,
+.stats-grid,
+.contact-grid,
+.category-grid,
+.workflow-list,
+.steps-grid,
+.path-grid,
+.rate-board,
+.examples-grid,
+.automation-examples,
+.addons-stage,
+.addon-list,
+.billing-info,
+.hero-stat-grid,
+.article-card-grid,
+.footer-links-grid {
+  display: grid;
+  gap: 16px;
+}
+
+.phone-actions {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.phone-actions span,
+.metric,
+.pricing-stat,
+.example-card,
+.auto-example,
+.addon-item,
+.hub-panel,
+.board-panel {
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.055);
+  padding: 12px;
+}
+
+.dashboard-card {
+  right: 28px;
+  bottom: 32px;
+  width: min(410px, 54%);
+  border-radius: 28px;
+  padding: 20px;
+}
+
+.dashboard-card h3 {
+  margin: 18px 0 8px;
+  font-size: 1.3rem;
+}
+
+.metric-grid,
+.pricing-stat-grid,
+.capacity-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.metric small,
+.pricing-stat span,
+.board-panel small,
+.hub-panel small {
+  display: block;
+  color: var(--muted);
+  font-size: 0.76rem;
+  font-weight: 800;
+}
+
+.metric b,
+.pricing-stat strong,
+.board-panel b,
+.hub-panel b {
+  display: block;
+  margin-top: 6px;
+}
+
+.float-card {
+  width: 260px;
+  border-radius: 24px;
+  padding: 16px;
+}
+
+.float-card p {
+  margin: 12px 0 0;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.float-card-left {
+  left: 28px;
+  top: 38px;
+}
+
+.float-card-right {
+  right: 24px;
+  top: 92px;
+}
+
+.lead-line {
+  display: grid;
+  grid-template-columns: 34px 1fr;
+  gap: 10px;
+  align-items: center;
+  margin-top: 12px;
+}
+
+.avatar {
+  width: 34px;
+  height: 34px;
+}
+
+.lead-line small {
+  display: block;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+.site-section {
+  margin-top: 28px;
+  padding: 30px;
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--line);
+  background: var(--panel);
+  box-shadow: var(--shadow);
+}
+
+.section-shell {
+  position: relative;
+  overflow: hidden;
+}
+
+.section-shell::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 12% 12%, rgba(154, 247, 212, 0.08), transparent 26%),
+    radial-gradient(circle at 92% 18%, rgba(37, 211, 102, 0.07), transparent 22%);
+  pointer-events: none;
+}
+
+.section-shell > * {
+  position: relative;
+}
+
+.section-shell-light {
+  background: linear-gradient(180deg, rgba(10, 18, 15, 0.78), rgba(6, 11, 9, 0.9));
+}
+
+.section-shell-muted {
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.section-heading {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.section-heading h2,
+.final-cta-card h2,
+.article-body h2,
+.legal-section h2,
+.search-panel h2,
+.about-callout h2 {
+  max-width: 850px;
+  margin-bottom: 0;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1.04;
+}
+
+.section-description {
+  max-width: 760px;
+}
+
+.feature-grid,
+.pricing-grid,
+.contact-grid,
+.article-card-grid {
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.split-grid,
+.rate-board,
+.billing-info {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.feature-card,
+.pricing-card,
+.surface-card,
+.metric-card,
+.faq-item,
+.contact-card,
+.search-panel,
+.about-callout,
+.article-body section,
+.legal-section {
+  border-radius: 28px;
+  padding: 24px;
+}
+
+.feature-card h3,
+.pricing-card h3,
+.surface-card h3,
+.contact-card h3 {
+  margin: 10px 0 8px;
+  font-size: 1.1rem;
+}
+
+.feature-icon,
+.step-no,
+.path-no,
+.flow-icon,
+.option-icon {
+  width: 42px;
+  height: 42px;
+}
+
+.feature-card-accent,
+.pricing-card-featured {
+  background: linear-gradient(135deg, rgba(154, 247, 212, 0.13), rgba(255, 255, 255, 0.04));
+}
+
+.pricing-price,
+.metric-value,
+.price {
+  font-family: var(--font-space-grotesk), sans-serif;
+  font-size: 2rem;
+  font-weight: 900;
+}
+
+.pricing-list,
+.check-list,
+.plan-list,
+.bad-list,
+.article-body ul,
+.legal-section ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.pricing-list li,
+.check-list li,
+.plan-list li,
+.bad-list li,
+.article-body li,
+.legal-section li {
+  margin-top: 10px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.workflow-item,
+.step-card,
+.path-card,
+.contact-option,
+.info-card,
+.safety-card,
+.form-card,
+.rates-panel,
+.examples-panel,
+.addons-visual {
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.045);
+  padding: 22px;
+}
+
+.workflow-item {
+  position: relative;
+  padding-left: 78px;
+}
+
+.workflow-item::before {
+  counter-increment: workflow;
+  content: "0" counter(workflow);
+  position: absolute;
+  left: 22px;
+  top: 22px;
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  background: rgba(154, 247, 212, 0.12);
+  color: var(--mint);
+  font-weight: 900;
+}
+
+.workflow-list {
+  counter-reset: workflow;
+}

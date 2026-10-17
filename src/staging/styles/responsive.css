@@ -1,0 +1,78 @@
+@media (max-width: 1000px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+  .sidebar {
+    width: 210px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .page-content {
+    padding: 30px 24px;
+  }
+  .account span {
+    display: none;
+  }
+}
+@media (max-width: 700px) {
+  .workspace {
+    flex-direction: column;
+  }
+  .sidebar {
+    width: 100%;
+    padding: 18px;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .wordmark {
+    margin-bottom: 18px;
+  }
+  .nav-label,
+  .sidebar-footer {
+    display: none;
+  }
+  .sidebar nav {
+    flex-direction: row;
+    overflow-x: auto;
+  }
+  .sidebar nav a {
+    white-space: nowrap;
+  }
+  .workspace-main header {
+    height: 60px;
+    padding: 0 20px;
+  }
+  .page-content {
+    padding: 28px 20px;
+  }
+  .page-heading h1 {
+    font-size: 30px;
+  }
+  .page-heading {
+    gap: 12px;
+  }
+  .workspace-main footer {
+    padding: 18px 20px;
+  }
+  .settings-grid {
+    grid-template-columns: 1fr;
+  }
+  .inline-form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .login {
+    padding: 28px 20px;
+  }
+  .login-card {
+    padding: 25px;
+    margin-top: 45px;
+  }
+  .login-card h1 {
+    font-size: 27px;
+  }
+  .login footer {
+    font-size: 10px;
+    gap: 15px;
+  }
+}

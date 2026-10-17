@@ -1,0 +1,131 @@
+/*
+ * Narrow compatibility bridge for older dashboard pages.
+ * Semantic utility colors are intentionally left untouched; only neutral
+ * canvas, text, border, and form defaults are normalized inside dashboard-main.
+ */
+:root,
+body {
+  color: var(--ca-text-primary);
+  background: var(--ca-canvas-0);
+}
+
+html.dark,
+html.dark body {
+  color: var(--ca-text-primary);
+  background: var(--ca-canvas-0);
+}
+
+.dashboard-main .bg-white {
+  background-color: var(--ca-surface-1);
+}
+
+.dashboard-main .bg-white\/50,
+.dashboard-main .bg-white\/60,
+.dashboard-main .bg-white\/80,
+.dashboard-main .bg-white\/90,
+.dashboard-main .bg-white\/95 {
+  background-color: var(--ca-surface-1);
+}
+
+.dashboard-main .bg-gray-50 {
+  background-color: var(--ca-surface-2);
+}
+
+.dashboard-main .bg-gray-50\/30,
+.dashboard-main .bg-gray-50\/50 {
+  background-color: var(--ca-surface-2);
+}
+
+.dashboard-main .bg-gray-100 {
+  background-color: var(--ca-surface-3);
+}
+
+.dashboard-main .text-gray-900,
+.dashboard-main .text-gray-800,
+.dashboard-main .text-gray-700 {
+  color: var(--ca-text-primary);
+}
+
+.dashboard-main .text-gray-600,
+.dashboard-main .text-gray-500 {
+  color: var(--ca-text-secondary);
+}
+
+.dashboard-main .text-gray-400 {
+  color: var(--ca-text-muted);
+}
+
+.dashboard-main .border-gray-100,
+.dashboard-main .border-gray-200 {
+  border-color: var(--ca-border-default);
+}
+
+html.dark .dashboard-main .dark\:bg-neutral-950 {
+  background-color: var(--ca-canvas-0);
+}
+
+html.dark .dashboard-main .dark\:bg-neutral-950\/30,
+html.dark .dashboard-main .dark\:bg-neutral-950\/40,
+html.dark .dashboard-main .dark\:bg-neutral-950\/50,
+html.dark .dashboard-main .dark\:bg-neutral-950\/60,
+html.dark .dashboard-main .dark\:bg-neutral-950\/95 {
+  background-color: var(--ca-surface-2);
+}
+
+html.dark .dashboard-main .dark\:bg-neutral-900,
+html.dark .dashboard-main .dark\:bg-black {
+  background-color: var(--ca-surface-1);
+}
+
+html.dark .dashboard-main .dark\:bg-white\/5,
+html.dark .dashboard-main .dark\:bg-white\/\[0\.035\],
+html.dark .dashboard-main .dark\:bg-neutral-900\/20,
+html.dark .dashboard-main .dark\:bg-neutral-900\/40,
+html.dark .dashboard-main .dark\:bg-neutral-900\/95 {
+  background-color: var(--ca-surface-1);
+}
+
+html.dark .dashboard-main .dark\:bg-neutral-800,
+html.dark .dashboard-main .dark\:bg-neutral-700 {
+  background-color: var(--ca-surface-2);
+}
+
+html.dark .dashboard-main .dark\:text-neutral-50,
+html.dark .dashboard-main .dark\:text-white,
+html.dark .dashboard-main .dark\:text-neutral-200 {
+  color: var(--ca-text-primary);
+}
+
+html.dark .dashboard-main .dark\:text-neutral-300,
+html.dark .dashboard-main .dark\:text-neutral-400 {
+  color: var(--ca-text-secondary);
+}
+
+html.dark .dashboard-main .dark\:text-neutral-500,
+html.dark .dashboard-main .dark\:text-neutral-600 {
+  color: var(--ca-text-muted);
+}
+
+html.dark .dashboard-main .dark\:border-neutral-800,
+html.dark .dashboard-main .dark\:border-white\/10 {
+  border-color: var(--ca-border-default);
+}
+
+.dashboard-main ::selection {
+  color: var(--ca-text-primary);
+  background: var(--ca-brand-soft);
+}
+
+.dashboard-main * {
+  scrollbar-color: var(--ca-border-strong) transparent;
+}
+
+.dashboard-main .shadow-sm {
+  box-shadow: var(--ca-shadow-soft);
+}
+
+.dashboard-main .shadow-lg,
+.dashboard-main .shadow-xl,
+.dashboard-main .shadow-2xl {
+  box-shadow: var(--ca-shadow-raised);
+}

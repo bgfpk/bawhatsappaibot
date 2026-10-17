@@ -1,0 +1,115 @@
+title = "Black Arrow audited publication fixtures"
+[extend]
+useDefault = true
+
+[[allowlists]]
+description = "Audited synthetic test literals; no live credential"
+condition = "AND"
+regexTarget = "secret"
+paths = ['''^src/services/admin\-business\-assistant\-foundation\.test\.ts$''']
+regexes = ['''^secret_api_key_12345$''']
+
+[[allowlists]]
+description = "Audited synthetic test literals; no live credential"
+condition = "AND"
+regexTarget = "secret"
+paths = ['''^src/services/admin\-business\-assistant\-operations\.test\.ts$''']
+regexes = ['''^bai_live_1234\.\.\.abcd$''', '''^secret_leopards_123$''']
+
+[[allowlists]]
+description = "Audited synthetic test literals; no live credential"
+condition = "AND"
+regexTarget = "secret"
+paths = ['''^src/services/admin\-business\-assistant\-read\-intelligence\.test\.ts$''']
+regexes = ['''^ck_secret_key_12345$''']
+
+[[allowlists]]
+description = "Audited synthetic test literals; no live credential"
+condition = "AND"
+regexTarget = "secret"
+paths = ['''^src/services/blackarrow\-billing\-reconciliation\.test\.ts$''']
+regexes = ['''^idem_plan_growth_001$''']
+
+[[allowlists]]
+description = "Audited synthetic test literals; no live credential"
+condition = "AND"
+regexTarget = "secret"
+paths = ['''^src/services/customer\-intelligence\-scan\-service\.test\.ts$''']
+regexes = ['''^dedupe_1234567890$''']
+
+[[allowlists]]
+description = "Audited synthetic test literals; no live credential"
+condition = "AND"
+regexTarget = "secret"
+paths = ['''^src/services/home\-command\-center\-service\.test\.ts$''']
+regexes = ['''^secret_123456$''']
+
+[[allowlists]]
+description = "Audited synthetic test literals; no live credential"
+condition = "AND"
+regexTarget = "secret"
+paths = ['''^src/services/inbox\-v2\-service\.test\.ts$''']
+regexes = ['''^secret_123456$''']
+
+[[allowlists]]
+description = "Audited synthetic test literals; no live credential"
+condition = "AND"
+regexTarget = "secret"
+paths = ['''^src/services/integration\-auth\-service\.test\.ts$''']
+regexes = ['''^bai_whsec_test_123456789$''']
+
+[[allowlists]]
+description = "Audited synthetic test literals; no live credential"
+condition = "AND"
+regexTarget = "secret"
+paths = ['''^src/services/knowledge\-center\-service\.test\.ts$''']
+regexes = ['''^sk\-123456789$''']
+
+[[allowlists]]
+description = "Audited synthetic test literals; no live credential"
+condition = "AND"
+regexTarget = "secret"
+paths = ['''^src/services/live\-monitor\-telemetry\.test\.ts$''']
+regexes = ['''^AIzaSyA1234567890abcdef$''']
+
+[[allowlists]]
+description = "Audited synthetic test literals; no live credential"
+condition = "AND"
+regexTarget = "secret"
+paths = ['''^src/services/totp\-secret\-encryption\.test\.ts$''']
+regexes = ['''^test\-encryption\-key\-32\-chars\-long\-abc$''']
+
+[[allowlists]]
+description = "Audited synthetic test literals; no live credential"
+condition = "AND"
+regexTarget = "secret"
+paths = ['''^src/services/whatsapp\-provider\-config\.test\.ts$''']
+regexes = ['''^abc123def456ghi789$''']
+
+[[allowlists]]
+description = "Audited synthetic test literals; no live credential"
+condition = "AND"
+regexTarget = "secret"
+paths = ['''^src/services/whatsapp\-reply\-pipeline\-tracer\.test\.ts$''']
+regexes = ['''^AIzaSyD_abc123456789$''']
+
+[[allowlists]]
+description = "Audited synthetic test literals; no live credential"
+condition = "AND"
+regexTarget = "secret"
+paths = ['''^src/services/woocommerce\-hmac\-auth\.test\.ts$''']
+regexes = ['''^test\-encryption\-key\-32\-chars\-long\-abc$''']
+
+[[allowlists]]
+description = "Audited synthetic test literals; no live credential"
+condition = "AND"
+regexTarget = "secret"
+paths = ['''^src/services/woocommerce\-route\-hmac\.test\.ts$''']
+regexes = ['''^bai_whsec_test_secret_123456789$''', '''^test\-encryption\-key\-32\-chars\-long\-abc$''']
+
+[[allowlists]]
+description = "Audited synthetic test literals; no live credential"
+condition = "AND"
+regexTarget = "secret"
+paths = ['''^src/utils/privacy\-redaction\.test\.ts$''']
+regexes = ['''^abc123456789$''', '''^secret_123456$''', '''^sig_987654321$''', '''^sk_live_123456789$''', '''^whsec_123456789$''']

@@ -1,0 +1,122 @@
+:root,
+:root[data-theme="dark"],
+.dark {
+  color-scheme: dark;
+
+  --ca-canvas: #0a0c0d;
+  --ca-canvas-0: #0a0c0d;
+  --ca-canvas-1: #101315;
+  --ca-canvas-2: #15191b;
+  --ca-canvas-subtle: #101315;
+
+  --ca-surface-1: #171b1e;
+  --ca-surface-2: #1d2226;
+  --ca-surface-3: #242a2f;
+  --ca-surface-4: #2c3338;
+  --ca-surface-raised: #2c3338;
+
+  --ca-text-primary: #f2f4f3;
+  --ca-text-secondary: #c4cac7;
+  --ca-text-muted: #929a96;
+  --ca-text-faint: #6d7671;
+  --ca-text-inverse: #08100c;
+
+  --ca-border: rgba(255, 255, 255, 0.11);
+  --ca-border-subtle: rgba(255, 255, 255, 0.065);
+  --ca-border-default: rgba(255, 255, 255, 0.11);
+  --ca-border-strong: rgba(255, 255, 255, 0.18);
+
+  --ca-brand: #32cf91;
+  --ca-brand-strong: #24ad78;
+  --ca-brand-soft: rgba(50, 207, 145, 0.1);
+  --ca-focus: #32cf91;
+
+  --ca-cyan: #4ba5c5;
+  --ca-cyan-soft: rgba(75, 165, 197, 0.11);
+  --ca-blue: #5b78c7;
+  --ca-blue-soft: rgba(91, 120, 199, 0.11);
+  --ca-violet: #806bc8;
+  --ca-violet-soft: rgba(128, 107, 200, 0.11);
+  --ca-amber: #c7953c;
+  --ca-amber-soft: rgba(199, 149, 60, 0.11);
+  --ca-rose: #cb6071;
+  --ca-rose-soft: rgba(203, 96, 113, 0.11);
+  --ca-teal: #38b8aa;
+  --ca-teal-soft: rgba(56, 184, 170, 0.1);
+
+  --ca-shadow-flat: none;
+  --ca-shadow-soft: 0 1px 2px rgba(0, 0, 0, 0.12);
+  --ca-shadow-raised: 0 8px 22px rgba(0, 0, 0, 0.16);
+  --ca-shadow-modal: 0 20px 55px rgba(0, 0, 0, 0.3);
+
+  --ca-focus-ring: rgba(50, 207, 145, 0.34);
+  --ca-overlay: rgba(4, 5, 6, 0.74);
+  --ca-motion-fast: 140ms;
+  --ca-motion-base: 180ms;
+  --ca-motion-slow: 220ms;
+}
+
+:root[data-theme="light"],
+.light {
+  color-scheme: light;
+
+  --ca-canvas: #f0f2f1;
+  --ca-canvas-0: #f0f2f1;
+  --ca-canvas-1: #f7f8f7;
+  --ca-canvas-2: #e8ebe9;
+  --ca-canvas-subtle: #e8ebe9;
+
+  --ca-surface-1: #ffffff;
+  --ca-surface-2: #f5f6f5;
+  --ca-surface-3: #ecefed;
+  --ca-surface-4: #e1e5e2;
+  --ca-surface-raised: #e1e5e2;
+
+  --ca-text-primary: #171b19;
+  --ca-text-secondary: #464d49;
+  --ca-text-muted: #5c635d;
+  --ca-text-faint: #8d958f;
+  --ca-text-inverse: #ffffff;
+
+  --ca-border: rgba(20, 28, 24, 0.12);
+  --ca-border-subtle: rgba(20, 28, 24, 0.07);
+  --ca-border-default: rgba(20, 28, 24, 0.12);
+  --ca-border-strong: rgba(20, 28, 24, 0.2);
+
+  --ca-brand: #16865d;
+  --ca-brand-strong: #0e6c4a;
+  --ca-brand-soft: rgba(22, 134, 93, 0.09);
+  --ca-focus: #16865d;
+
+  --ca-cyan: #1a6e8b;
+  --ca-cyan-soft: rgba(36, 123, 153, 0.09);
+  --ca-blue: #425fa8;
+  --ca-blue-soft: rgba(66, 95, 168, 0.09);
+  --ca-violet: #654fa7;
+  --ca-violet-soft: rgba(101, 79, 167, 0.09);
+  --ca-amber: #835607;
+  --ca-amber-soft: rgba(147, 99, 14, 0.09);
+  --ca-rose: #a94153;
+  --ca-rose-soft: rgba(169, 65, 83, 0.09);
+  --ca-teal: #136c65;
+  --ca-teal-soft: rgba(24, 126, 118, 0.09);
+
+  --ca-shadow-flat: none;
+  --ca-shadow-soft: 0 1px 2px rgba(0, 0, 0, 0.08);
+  --ca-shadow-raised: 0 8px 22px rgba(0, 0, 0, 0.12);
+  --ca-shadow-modal: 0 20px 55px rgba(0, 0, 0, 0.2);
+
+  --ca-focus-ring: rgba(22, 134, 93, 0.3);
+  --ca-overlay: rgba(10, 12, 13, 0.58);
+  --ca-motion-fast: 140ms;
+  --ca-motion-base: 180ms;
+  --ca-motion-slow: 220ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --ca-motion-fast: 0.01ms;
+    --ca-motion-base: 0.01ms;
+    --ca-motion-slow: 0.01ms;
+  }
+}

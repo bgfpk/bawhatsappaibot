@@ -1,0 +1,88 @@
+/* Shared campaign controls and recoverable deletion. */
+.advanced-details {
+  margin-block: 1rem;
+}
+.advanced-details summary,
+.later-navigation summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+.advanced-details[open] > summary {
+  margin-bottom: 1rem;
+}
+.advanced-details pre {
+  max-width: 100%;
+  overflow: auto;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.danger-button {
+  border-color: #bb6767;
+  color: #ffd2cd;
+  background: #311c20;
+}
+.primary-button {
+  display: inline-block;
+  padding: 0.75rem 1rem;
+  background: #e8c46b;
+  color: #17140b;
+  border: 1px solid #e8c46b;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  font-weight: 600;
+}
+.delete-action {
+  margin-top: 0.75rem;
+}
+.number-confirm {
+  overflow-wrap: anywhere;
+}
+.number-confirm input {
+  width: 100%;
+  min-width: 0;
+}
+.test-reply {
+  padding: 1rem;
+  border: 1px solid #786b43;
+  border-radius: 0.6rem;
+  white-space: pre-wrap;
+}
+.later-navigation {
+  margin: 1rem 0;
+  color: #b9bec5;
+}
+.later-navigation a {
+  display: block;
+  margin: 0.7rem 0;
+}
+.ai-actions {
+  align-items: start;
+}
+.ai-actions > .delete-action {
+  margin-top: 0;
+}
+button:focus-visible,
+a:focus-visible,
+summary:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 3px solid #e8c46b;
+  outline-offset: 3px;
+}
+@media (max-width: 640px) {
+  .ai-actions > * {
+    max-width: 100%;
+  }
+  .workspace-card,
+  .number-card,
+  .panel {
+    min-width: 0;
+  }
+  .page-content {
+    overflow-wrap: anywhere;
+  }
+  .test-reply {
+    font-size: 0.95rem;
+  }
+}
